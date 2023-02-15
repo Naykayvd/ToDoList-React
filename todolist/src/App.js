@@ -31,7 +31,7 @@ function App() {
     setTodo("")
   }
 
-  function deleteTodo(id) {
+  function removeTodo(id) {
     const updatedTodos = [ ... todos ].filter((todo) => todo.id != id)
 
     setTodos(updatedTodos)
@@ -57,7 +57,7 @@ function App() {
       </form>
       {todos.map((todo) => <div key={todo.id}>
         <div>{todo.text}</div>
-        <button onClick={() => deleteTodo(todo.id)}>REMOVE</button>
+        <button onClick={() => removeTodo(todo.id)}>REMOVE</button>
         <input type="checkbox" onChange={() => toggleComplete(todo.id)} checked={todo.completed} />
         </div>)}
     </div>
